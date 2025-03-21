@@ -105,6 +105,18 @@ void ULoggerLibrary::LogFloat(UObject* Caller, const FString& Message, double Va
 	LogMessage(Caller, FinalMessage, Level);
 }
 
+void ULoggerLibrary::LogVector(UObject* Caller, const FString& Message, const FVector& Value, ELoggerLevel Level)
+{
+	FString FinalMessage = Message + TEXT(": ") + Value.ToString();
+	LogMessage(Caller, FinalMessage, Level);
+}
+
+void ULoggerLibrary::LogRotator(UObject* Caller, const FString& Message, const FRotator& Value, ELoggerLevel Level)
+{
+	FString FinalMessage = Message + TEXT(": ") + Value.ToString();
+	LogMessage(Caller, FinalMessage, Level);
+}
+
 void ULoggerLibrary::LogObject(UObject* Caller, const FString& Message, UObject* Value, ELoggerLevel Level)
 {
 	FString ObjectName = (Value != nullptr ? Value->GetName() : TEXT("NULL"));

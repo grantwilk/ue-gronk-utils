@@ -18,12 +18,12 @@ UENUM(BlueprintType)
 enum class ELoggerLevel : uint8
 {
 	VeryVerbose UMETA(DisplayName = "VeryVerbose"),
-	Verbose UMETA(DisplayName = "Verbose"),
-	Log UMETA(DisplayName = "Log"),
-	Display UMETA(DisplayName = "Display"),
-	Warning UMETA(DisplayName = "Warning"),
-	Error UMETA(DisplayName = "Error"),
-	Fatal UMETA(DisplayName = "Fatal")
+	Verbose		UMETA(DisplayName = "Verbose"),
+	Log			UMETA(DisplayName = "Log"),
+	Display		UMETA(DisplayName = "Display"),
+	Warning		UMETA(DisplayName = "Warning"),
+	Error		UMETA(DisplayName = "Error"),
+	Fatal		UMETA(DisplayName = "Fatal")
 };
 
 /**
@@ -33,7 +33,7 @@ enum class ELoggerLevel : uint8
 UENUM(BlueprintType)
 enum class ELogValidityCondition : uint8
 {
-	LogWhenValid UMETA(DisplayName = "Log When Valid"),
+	LogWhenValid   UMETA(DisplayName = "Log When Valid"),
 	LogWhenInvalid UMETA(DisplayName = "Log When Invalid")
 };
 
@@ -44,7 +44,7 @@ enum class ELogValidityCondition : uint8
 UENUM(BlueprintType)
 enum class ELogBooleanCondition : uint8
 {
-	LogWhenTrue UMETA(DisplayName = "Log When True"),
+	LogWhenTrue	 UMETA(DisplayName = "Log When True"),
 	LogWhenFalse UMETA(DisplayName = "Log When False")
 };
 
@@ -55,7 +55,7 @@ enum class ELogBooleanCondition : uint8
 UENUM(BlueprintType)
 enum class EValidityOutcome : uint8
 {
-	IsValid UMETA(DisplayName = "Is Valid"),
+	IsValid	   UMETA(DisplayName = "Is Valid"),
 	IsNotValid UMETA(DisplayName = "Is Not Valid")
 };
 
@@ -66,7 +66,7 @@ enum class EValidityOutcome : uint8
 UENUM(BlueprintType)
 enum class EConditionOutcome : uint8
 {
-	IsTrue UMETA(DisplayName = "True"),
+	IsTrue	UMETA(DisplayName = "True"),
 	IsFalse UMETA(DisplayName = "False")
 };
 
@@ -130,6 +130,28 @@ public:
 	 */
 	UFUNCTION(BlueprintCallable, Category = "GronkUtils|Logging", meta = (DisplayName = "Log Message with Float", DefaultToSelf = "Caller"))
 	static void LogFloat(UObject* Caller, const FString& Message, double Value, ELoggerLevel Level = ELoggerLevel::Display);
+
+	/**
+	 * @brief Logs a message with a vector value appended to it.
+	 *
+	 * @param Caller	The calling object.
+	 * @param Message	The message to log.
+	 * @param Value		The vector value to append.
+	 * @param Level		Log level of the message.
+	 */
+	UFUNCTION(BlueprintCallable, Category = "GronkUtils|Logging", meta = (DisplayName = "Log Message with Vector", DefaultToSelf = "Caller"))
+	static void LogVector(UObject* Caller, const FString& Message, const FVector& Value, ELoggerLevel Level = ELoggerLevel::Display);
+
+	/**
+	 * @brief Logs a message with a rotator value appended to it.
+	 *
+	 * @param Caller	The calling object.
+	 * @param Message	The message to log.
+	 * @param Value		The rotator value to append.
+	 * @param Level		Log level of the message.
+	 */
+	UFUNCTION(BlueprintCallable, Category = "GronkUtils|Logging", meta = (DisplayName = "Log Message with Rotator", DefaultToSelf = "Caller"))
+	static void LogRotator(UObject* Caller, const FString& Message, const FRotator& Value, ELoggerLevel Level = ELoggerLevel::Display);
 
 	/**
 	 * @brief Logs a message with an object value appended to it.
