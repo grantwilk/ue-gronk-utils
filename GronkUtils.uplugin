@@ -1,0 +1,29 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0.0",
+  "FriendlyName": "GronkUtils",
+  "Description": "A collection of utilities for Unreal Engine 5.",
+  "Category": "GronkUtils",
+  "CreatedBy": "Grant Wilk",
+  "CreatedByURL": "",
+  "DocsURL": "",
+  "MarketplaceURL": "",
+  "SupportURL": "mailto:grant.wilk04@gmail.com",
+  "CanContainContent": false,
+  "Installed": true,
+  "Modules": [
+    {
+      "Name": "GronkUtils",
+      "Type": "Runtime",
+      "LoadingPhase": "PreDefault",
+      "PlatformAllowList": [
+        "Mac",
+        "IOS",
+        "Win64",
+        "Android",
+        "Linux"
+      ]
+    }
+  ]
+}

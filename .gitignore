@@ -1,0 +1,8 @@
+# Visual Studio 2015 user specific files
+.vs/
+
+# Binary Files
+Binaries/*
+
+# Compiled source files for the engine to use
+Intermediate/*
